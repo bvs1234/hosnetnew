@@ -66,22 +66,24 @@
         }
 
         .box {
-            position: relative;
-            background: url('https://static.vecteezy.com/system/resources/thumbnails/022/977/922/small/rectangle-floral-frame-element-vector.jpg') no-repeat center center;
-            background-size: cover;
-            padding: 20px;
-            margin: 10px 10px 10px 0;
-            width: 250px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border-radius: 15px;
-            overflow: hidden;
-        }
+    position: relative;
+    background: rgba(255, 255, 255, 0.2); /* Slightly transparent background */
+    backdrop-filter: blur(10px); /* Blur effect to create frosty glass look */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    padding: 20px;
+    margin: 10px 10px 10px 0;
+    width: 250px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: Add a border to enhance the frosty effect */
+}
 
         .box p {
             margin: 5px 0;
             font-size: 16px;
-            color: #0d47a1;
+            color: #FFFFFF;
         }
 
         .call-button,
@@ -291,7 +293,8 @@ function fetchHostelData(city, area, page) {
           <p><strong>Hostel Name:</strong> ${row.hostelName}</p>
           <p><strong>Area:</strong> ${row.area}</p>
           <p><strong>City:</strong> ${city}</p> <!-- Set city directly from the variable -->
-          <p><strong>Contact Number:</strong> <a href="tel:${row.phoneNumber}">${row.phoneNumber}</a></p>
+	  <p><strong>Contact Number:</strong> ${row.phoneNumber}</p> 
+          //<p><strong>Contact Number:</strong> <a href="tel:${row.phoneNumber}">${row.phoneNumber}</a></p>*/
           <a href="tel:${row.phoneNumber}" class="call-button">Call</a>
           <a href="https://wa.me/${phoneNumberFormatted}" class="whatsapp-button" target="_blank">WhatsApp</a>
         `;
